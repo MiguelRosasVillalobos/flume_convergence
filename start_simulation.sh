@@ -2,7 +2,7 @@
 #Miguel Rosas
 
 # Lista de valores para lc
-valores_lc=("0.01" "0.009" "0.008" "0.007" "0.006" "0.005" "0.004" "0.003" "0.002" "0.001")
+valores_lc=("0.02" "0.01" "0.009" "0.008" "0.007" "0.006" "0.005" "0.004" "0.003" "0.002" "0.001")
 
 # Verifica si se proporciona la cantidad como argumento
 if [ $# -eq 0 ]; then
