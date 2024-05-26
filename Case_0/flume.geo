@@ -1,10 +1,9 @@
-
 //Dimensions of the flume and free surface
 l = 6;
-hm = 0.59;
+hm = 0.4;
 h = 0.3;
 wt = 0.01;
-H = 0.025;
+H = 0.06;
 
 // Characteristic mesh length
 lc = $lcc; 
