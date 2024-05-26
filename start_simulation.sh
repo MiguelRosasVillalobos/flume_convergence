@@ -2,7 +2,7 @@
 #Miguel Rosas
 
 # Lista de valores para lc
-valores_lc=("0.02" "0.01" "0.009" "0.008" "0.007" "0.006" "0.005" "0.004" "0.003" "0.002" "0.001")
+valores_lc=("0.03" "0.025" "0.02" "0.015" "0.01" "0.009" "0.008" "0.007" "0.006" "0.005")
 
 # Verifica si se proporciona la cantidad como argumento
 if [ $# -eq 0 ]; then
@@ -26,8 +26,6 @@ for ((i = 1; i <= $cantidad; i++)); do
 	cp -r "Case_0/0.orig/" "$nombre_carpeta/"
 	cp -r "Case_0/constant/" "$nombre_carpeta/"
 	cp -r "Case_0/system/" "$nombre_carpeta/"
-	cp "./Case_0/freesurface_generator.sh" "$nombre_carpeta/"
-	cp "./Case_0/freesurface.jl" "$nombre_carpeta/"
 
 	# Copia un archivo dentro de la carpeta
 	archivo_geo="Case_0/flume.geo"
@@ -60,8 +58,6 @@ for ((i = 1; i <= $cantidad; i++)); do
 	setFields
 	decomposePar
 	mpirun -np 6 interIsoFoam -parallel
-	bash ./freesurface_generator.sh
-	julia ./freesurface.jl
 	cd ..
 done
 
