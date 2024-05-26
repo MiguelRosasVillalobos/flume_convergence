@@ -47,6 +47,7 @@ for ((i = 1; i <= $cantidad; i++)); do
 
 	#Generar mallado gmsh
 	cd "$nombre_carpeta/"
+	mkdir freesurface
 	gmsh "$archivo_geoi" -3
 
 	#Genera mallado OpenFoam
@@ -68,6 +69,7 @@ for ((i = 1; i <= $cantidad; i++)); do
 	mpirun -np 6 interIsoFoam -parallel
 	pvbatch extract_freesurface.py
 	python3 sort_data.py
+	rm data*
 	for p in "${valores_p[@]}"; do
 		# Crear un archivo temporal para el script modificado
 		temp_script="temp_script_$p.py"
